@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TestService } from './test.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,9 @@ import { TestService } from './test.service';
 })
 export class AppComponent {
   title = 'test-app';
-  user = this.service.user;
+  user ='';
   data:any;
-  constructor(public service:TestService){ 
+  constructor(){ 
     this.getUser()
   }
 
@@ -18,10 +17,10 @@ export class AppComponent {
 		return !data ;
 	}
   getUser(){
-    this.service.getUsers('http://localhost:8000/odata/Customers');
-    this.service.getDetails().then((data) =>{
-      this.data = data
-    })
+    // this.service.getUsers('http://localhost:8000/odata/Customers');
+    // this.service.getDetails().then((data) =>{
+    //   this.data = data
+    // })
    
   }
 }
